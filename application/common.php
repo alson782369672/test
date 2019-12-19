@@ -57,3 +57,7 @@ function objectToArray($object) {
     //先编码成json字符串，再解码成数组
     return json_decode(json_encode($object), true);
 }
+
+function writeLog($log) {
+    file_put_contents(dirname(__FILE__).'/log.txt', $log, FILE_APPEND);
+}
